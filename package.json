@@ -9,7 +9,8 @@
     "lint": "next lint",
     "test": "jest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "coverage": "npm test -- --coverage"
   },
   "dependencies": {
     "@testing-library/react": "^16.1.0",
@@ -46,8 +47,5 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
-  },
-  "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/setupTests.ts"]
   }
 }
