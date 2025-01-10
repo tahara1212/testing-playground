@@ -1,0 +1,15 @@
+# Node.jsのモジュールディレクトリ
+node_modules/
+
+# Next.jsのビルド成果物
+.next/
+
+# Storybookの設定ディレクトリ
+.storybook/
+
+# ビルド成果物
+build/
+dist/
+
+# その他の無視するファイル
+*.min.js
