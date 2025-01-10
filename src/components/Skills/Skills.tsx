@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 type SlillsProps = {
   skills: string[];
-}
+};
 
 export const Skills = (props: SlillsProps) => {
-  const { skills } = props
+  const { skills } = props;
+  const [isLogin, setIsLogin] = useState(false);
   return (
     <div>
       <p>Skills</p>
@@ -14,6 +15,11 @@ export const Skills = (props: SlillsProps) => {
           <li key={skill}>{skill}</li>
         ))}
       </ul>
+      {isLogin ? (
+        <button onClick={() => setIsLogin(false)}>ログアウト</button>
+      ) : (
+        <button onClick={() => setIsLogin(true)}>ログイン</button>
+      )}
     </div>
-  )
-}
+  );
+};
