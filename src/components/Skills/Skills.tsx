@@ -7,6 +7,11 @@ type SlillsProps = {
 export const Skills = (props: SlillsProps) => {
   const { skills } = props;
   const [isLogin, setIsLogin] = useState(false);
+
+  setTimeout(() => {
+    setIsLogin(true);
+  }, 1500);
+
   return (
     <div>
       <p>Skills</p>

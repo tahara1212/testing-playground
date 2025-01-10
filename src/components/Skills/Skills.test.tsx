@@ -14,4 +14,26 @@ describe('Skills', () => {
     const listElements = screen.getAllByRole('listitem');
     expect(listElements).toHaveLength(skills.length);
   });
+
+  it('通常時、ログインボタンが表示されている', () => {
+    render(<Skills skills={skills} />);
+    const loginElement = screen.getByRole('button', {
+      name: 'ログイン',
+    });
+    expect(loginElement).toBeInTheDocument();
+  });
+
+  it('1500ms秒後、ログアウトボタンが表示される', async () => {
+    render(<Skills skills={skills} />);
+    const logoutElement = await screen.findByRole(
+      'button',
+      {
+        name: 'ログアウト',
+      },
+      {
+        timeout: 2000,
+      }
+    );
+    expect(logoutElement).toBeInTheDocument();
+  });
 });
